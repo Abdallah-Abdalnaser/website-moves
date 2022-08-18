@@ -1,0 +1,533 @@
+/* start global */
+:root {
+    --color-tranzation:rgb(67, 134, 197);
+    --main-duration:0.3s;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color:rgb(16 16 16);
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #777;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #be2d2d;
+}
+
+.contaner {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+@media (min-width:787px) {
+    .contaner {
+        width: 755px;
+    }
+}
+
+@media (min-width:992px) {
+    .contaner {
+        width: 970px;
+    }
+}
+
+@media (min-width:1200px) {
+    .contaner {
+        width: 1190px;
+    }
+}
+
+.grid-system {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(159px,1fr));
+    gap: 15px;
+}
+
+@media (max-width:366px) {
+    .grid-system {
+        grid-template-columns: repeat(auto-fill, minmax(134px, 1fr));
+        }
+}
+/* end global */
+/* start header */
+header {
+    background-color: rgba(15, 15, 15, .9);
+    /* border-bottom: 1px solid #353333; */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+header .contaner::before {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    height: 2px;
+    bottom: 0px;
+    left: 0;
+}
+
+header .contaner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 1px solid #353333;
+}
+
+header .contaner a {
+    text-decoration: none;
+}
+
+header .contaner .input {
+    position: relative;
+}
+
+header .contaner .input input {
+    background: #272727;
+    border: 0;
+    border-radius: 6px;
+    width: 229px;
+    height: 33px;
+    outline: 0;
+    padding: 0px 13px;
+    color: white;
+    padding-left: 28px;
+    transition: var(--main-duration);
+}
+
+header .contaner .input i {
+    position: absolute;
+    left: 14px;
+    color: white;
+    top: 50%;
+    transform: translatey(-50%);
+    font-size:12px;
+}
+
+header .contaner input::placeholder {
+    float: right;
+}
+
+header .contaner > i {
+    color: white;
+    flex: 1;
+    display: none;
+    justify-content: flex-start;
+    margin-left: 41px;
+    align-items: center;
+    font-size: 20px;
+}
+
+header .contaner>i:hover + ul {
+    transform: rotateX(0deg);
+}
+
+header .contaner > i::before {
+    transition: var(--main-duration);
+}
+
+header .contaner > i:hover::before {
+    transform: rotate(90deg);
+    color: #be2d2d;
+}
+
+@media (max-width:768px) {
+    header .contaner > i {
+        display: flex;
+    }
+    header .contaner>ul {
+        /* display: none !important; */
+        position: absolute;
+        flex-direction: column;
+        top: 67px;
+        background: rgb(15 15 15 / 54%);
+        width: 101%;
+        left: -7px;
+    }
+    header .contaner>ul li {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px 40px;
+    }
+    header .contaner .input input {
+        display: none;
+    }
+    header .contaner .input::before {
+        content: "";
+        position: absolute;
+        background-color: #be2d2d;
+        width: 2px;
+        height: 24px;
+        left: 33px;
+        top: -12px;
+    }
+    header .contaner>ul>li:not(:last-of-type)::before {
+    left: -2% !important;
+    top: 4px !important;
+    }
+    header .contaner>ul>li:nth-child(2)::before {
+    left: -2% !important;
+    top: 4px !important;
+    }
+    header .contaner>ul li:first-of-type ul {
+        width: 90% !important;
+        display: flex;
+        flex-direction: column;
+        transition: var(--main-duration);
+        left: 37px !important;
+        top: 49px !important;
+        transform: rotateX(90deg);
+        transform-origin: top center;
+    }
+    header .contaner>ul li:first-of-type:hover ul {
+        transform: rotateX(0deg);
+    }
+    header .contaner>ul li:nth-child(2):hover ul {
+        transform: rotateX(0deg);
+    }
+    header .contaner>ul>li:first-of-type {
+        transition: var(--main-duration);
+    }
+    header .contaner>ul >li:first-of-type:hover {
+        margin-bottom: 180px;
+    }
+    header .contaner>ul>li:nth-child(2) {
+        transition: var(--main-duration);
+    }
+    header .contaner>ul >li:nth-child(2):hover {
+        margin-bottom: 180px;
+    }
+    header .contaner>ul li:nth-child(2) ul {
+        width: 90% !important;
+        display: flex;
+        flex-direction: column;
+        left: 37px !important;
+        top: 49px !important;
+        transform: rotateX(90deg);
+        transform-origin: top center;
+    }
+    header .contaner>ul li:nth-child(1) {
+        order: 3;
+    }
+    header .contaner>ul li:nth-child(2) {
+        order: 2;
+    }
+    header .contaner>ul li:nth-child(3) {
+        order: 1;
+    }
+    header .contaner>ul li {
+        margin-left: 0px !important;
+    }
+    header .contaner>ul {
+        transform: rotateX(90deg);
+    }
+}
+
+header .contaner > ul {
+    list-style: none;
+    display: flex;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    flex: 1;
+    justify-content: flex-end;
+    margin-right: 33px;
+    transform-origin: top center;
+    transition: var(--main-duration);
+}
+
+header .contaner > ul li {
+    margin-left: 31px;
+    font-size: 15px;
+    transition: var(--main-duration);
+    position: relative;
+    /* color: rgba(255, 255, 255, .8) ; */
+}
+
+header .contaner > ul li a {
+    color: rgba(255, 255, 255, .8) ;
+}
+
+header .contaner>ul >li:not(:last-of-type)::before {
+    content: "";
+    position: relative;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white transparent transparent transparent;
+    left: -60px;
+    top: 15px;
+    transition: var(--main-duration);
+}
+
+header .contaner>ul>li:nth-child(1)::before {
+    left: -88px;
+    top: 14px;
+}
+
+header .contaner>ul > li:hover::before {
+    border-color: var(--color-tranzation) transparent transparent transparent;
+}
+
+header .contaner > ul li a:hover {
+    color: var(--color-tranzation);
+}
+
+header .contaner>ul li:nth-child(2) ul {
+    position: absolute;
+    list-style: none;
+    background-color: black;
+    width: 150px;
+    padding:15px;
+    top: 50px;
+    left: -92px;
+    transition: var(--main-duration);
+    transform: rotateX(90deg);
+    transform-origin: top center;
+    z-index: 1;
+}
+
+header .contaner>ul li:first-of-type ul {
+    position: absolute;
+    list-style: none;
+    background-color: black;
+    width: 150px;
+    padding: 15px;
+    top: 50px;
+    left: -68px;
+    transition: var(--main-duration);
+    transform: rotateX(90deg);
+    transform-origin: top center;
+    z-index: 2;
+}
+
+header .contaner>ul li:nth-child(2):hover ul,
+header .contaner>ul li:first-of-type:hover ul {
+    transform: rotateX(0deg);
+    display: block;
+}
+
+header .contaner>ul li ul li {
+    float: right;
+    margin-bottom: 10px;
+    font-size: 13px;
+    position: relative;
+    padding-right: 15px;
+    transition: var(--main-duration);
+    color: #777;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header .contaner>ul li ul li:hover {
+    padding-right: 25px;
+}
+
+header .contaner>ul li ul li::before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 5px;
+    border-color: transparent #777 transparent transparent;
+    right: 0;
+    top: 50%;
+    transform: translatey(-50%);
+    transition: var(--main-duration);
+}
+
+header .contaner>ul li ul li:hover:before {
+    right: 12px;
+}
+
+header .contaner>ul li ul li:hover:before {
+        border-color: transparent var(--color-tranzation) transparent transparent;
+}
+
+header .contaner h1 a {
+    color: #be2d2d;
+    margin: 20px 0px;
+}
+
+/* end header */
+/* start section */
+section {
+    margin-bottom: 47px;
+}
+
+section .contaner {
+    position: relative;
+}
+
+section:not(:last-of-type) .contaner::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #3c3c3c;
+    left: 0;
+    bottom: -30px;
+}
+
+section .contaner .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin: 12px 0px;
+    margin-bottom: 17px;
+}
+
+section .contaner .head .ico i {
+    color: #777;
+    cursor: pointer;
+    transition: var(--main-duration);
+}
+
+section .contaner .head .ico i:hover {
+    color: var(--color-tranzation);
+}
+
+section .contaner .head h1 {
+    font-size: 19px;
+    position: relative;
+    padding-right: 8px;
+    margin-right: 10px;
+}
+
+section .contaner .head h1:before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 25px;
+    background-color: var(--color-tranzation);
+    right: -8px;
+}
+
+section .contaner .cards .card {
+    width: fit-content;
+}
+
+section .contaner .cards .card figure {
+    max-width: 100%;
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+}
+
+section .contaner .cards .card figure a {
+    transition: var(--main-duration);
+}
+
+section .contaner .cards .card figure:hover > a {
+    filter: brightness(50%);
+}
+
+section .contaner .cards .card figure img {
+    width: 100%;
+    height: 100%;
+    transition: var(--main-duration);
+}
+
+section .contaner .cards .card figure img:hover {
+    transform: scale(1.3);
+    filter:blur(5px);
+}
+
+section .contaner .cards .card figure .rate {
+    position: absolute;
+    color: white;
+    background-color: rgb(255 255 255 / 20%);
+    bottom: -28px;
+    padding: 6px 8px;
+    font-size: 14px;
+    transition: var(--main-duration);
+}
+
+section .contaner .cards .card figure:hover .rate {
+    bottom: 0px ;
+}
+
+section .contaner .cards .card figure .play{
+    position: absolute;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 22px 26px;
+    opacity: 0;
+    transition: var(--main-duration);
+    border-radius: 50%;
+    font-size: 25px;
+    background-color: white;
+}
+
+section .contaner .cards .card figure:hover .play {
+    padding:12px 18px;
+    opacity: 1;
+    font-size: 20px;
+}
+
+section .contaner .cards .card figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 10px;
+    padding-right: 13px;
+}
+
+section .contaner .cards .card figcaption p a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    transition: var(--main-duration);
+}
+
+section .contaner .cards .card figcaption p a:hover {
+    color: var(--color-tranzation);
+}
+
+section .contaner .cards .card figcaption span {
+    color: #777;
+    font-size: 12px;
+    margin-top: 8px;
+}
+/* end section */
+/* start footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 10px 0px;
+    text-transform: uppercase;
+}
+
+footer p span {
+    color: #be2d2d;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+/* end footer */
